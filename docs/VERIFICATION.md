@@ -9,7 +9,7 @@ Validated locally on 10 September 2026, using Windows, Node.js 24.14.0 and Chrom
 | Dependency installation | PASS: npm installation completed and a lockfile was produced. |
 | `npm run lint` | PASS: ESLint completed with exit code 0. |
 | `npm run typecheck` | PASS: TypeScript completed with exit code 0. |
-| `npm test` | PASS: 88 tests across 8 files. Includes inherited diagnostic tests and integration coverage for learning evidence, training, retention, formulas, daily planning and provider handling. |
+| `npm test` | PASS: 97 tests across 8 files. Includes inherited diagnostic tests and integration coverage for learning evidence, training, retention, formulas, daily planning, provider handling and public-origin validation behind Render. |
 | `npm run build` | PASS: optimized Next.js production build, TypeScript and all 12 generated pages completed. |
 | Production start | PASS: the production Next.js server started on port 3210; browser tests exercised this build. |
 | `npm run test:e2e` | PASS: 13 browser journeys, 18.3 seconds on the final run. |
@@ -50,6 +50,8 @@ Visual inspection artifacts: [desktop dashboard](screenshots/desktop.png) and [m
 | Deployment, environment documentation and README | Vercel configuration, `.env.example` and [README](../README.md) are present. Actual deployment remains unperformed. |
 
 ## Remaining limits
+
+Render origin regression: reproduced the incorrect 403 when the browser origin was the public HTTPS URL and Next.js used its internal listener URL. The fix accepts the exact `RENDER_EXTERNAL_URL` automatically and an optional configured custom-domain `APP_ORIGIN`. Tests cover a mocked provider success, invalid configuration, unrelated origins and forwarded-header spoofing. The rebuilt production server also passed three HTTP checks: the configured public origin reached input validation (400 for the deliberately empty payload), and two unrelated origins returned 403. Lint and production build passed. The 13-browser-journey result above is from the preceding full run; these additional checks target the server-only change.
 
 Live AI success needs `GEMINI_API_KEY` and an accessible `GEMINI_MODEL`. Provider behavior tests and browser stubs do not validate credentials, account quotas or live teaching quality.
 

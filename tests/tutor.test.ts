@@ -9,6 +9,7 @@ const input = {
 };
 afterEach(() => {
   vi.unstubAllEnvs();
+  vi.unstubAllGlobals();
 });
 describe("Gemini tutor boundary", () => {
   it("refuses a missing key without contacting a provider", async () => {
@@ -115,6 +116,58 @@ describe("Gemini tutor boundary", () => {
   });
 });
 describe("HTTP request boundary", () => {
+  it("reaches Gemini and returns a validated reply through Render", async () => {
+    vi.stubEnv("RENDER_EXTERNAL_URL", "https://aceapt-test.onrender.com");
+    vi.stubEnv("GEMINI_API_KEY", "test-only-value");
+    const output = {message: "Find one tenth first.", nextStep: "What is 500 divided by 10?"};
+    const fetcher = vi.fn().mockResolvedValue(Response.json({candidates: [{
+      finishReason: "STOP", content: {parts: [{text: JSON.stringify(output)}]},
+    }]}));
+    vi.stubGlobal("fetch", fetcher);
+    const response = await POST(new Request("http://0.0.0.0:10000/api/tutor", {
+      method: "POST", body: JSON.stringify(input),
+      headers: {origin: "https://aceapt-test.onrender.com", "x-forwarded-for": crypto.randomUUID()},
+    }));
+    expect(response.status).toBe(200);
+    expect(await response.json()).toEqual(output);
+    expect(fetcher).toHaveBeenCalledOnce();
+  });
+  it.each([
+    "https://other.onrender.com", "https://aceapt-test.onrender.com.evil.example",
+    "http://aceapt-test.onrender.com", "null", "not a URL",
+  ])("rejects an unrelated or malformed origin behind Render: %s", async origin => {
+    vi.stubEnv("RENDER_EXTERNAL_URL", "https://aceapt-test.onrender.com");
+    const response = await POST(new Request("http://0.0.0.0:10000/api/tutor", {
+      method: "POST", body: "{}",
+      headers: {origin, "x-forwarded-host": "other.onrender.com", "x-forwarded-proto": "https"},
+    }));
+    expect(response.status).toBe(403);
+  });
+  it("accepts a separately configured custom domain", async () => {
+    vi.stubEnv("APP_ORIGIN", "https://learn.example.com/");
+    const response = await POST(new Request("http://0.0.0.0:10000/api/tutor", {
+      method: "POST", body: "{}",
+      headers: {origin: "https://learn.example.com", "x-forwarded-for": crypto.randomUUID()},
+    }));
+    expect(response.status).toBe(400);
+  });
+  it("ignores invalid public-origin configuration instead of throwing", async () => {
+    vi.stubEnv("APP_ORIGIN", "https://learn.example.com/path");
+    vi.stubEnv("RENDER_EXTERNAL_URL", "invalid");
+    const response = await POST(new Request("http://0.0.0.0:10000/api/tutor", {
+      method: "POST", body: "{}", headers: {origin: "https://learn.example.com"},
+    }));
+    expect(response.status).toBe(403);
+  });
+  it("accepts the Render public origin behind the internal Next.js listener", async () => {
+    vi.stubEnv("RENDER_EXTERNAL_URL", "https://aceapt-test.onrender.com");
+    const response = await POST(new Request("http://0.0.0.0:10000/api/tutor", {
+      method: "POST",
+      headers: {origin: "https://aceapt-test.onrender.com", "x-forwarded-for": crypto.randomUUID()},
+      body: "{}",
+    }));
+    expect(response.status).toBe(400);
+  });
   function request(
     body: string,
     origin = "http://localhost",

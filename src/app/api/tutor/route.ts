@@ -1,10 +1,10 @@
 import { tutorInput } from "@/ai/schemas";
 import { generateTutor, TutorError } from "@/ai/provider";
+import { isAllowedTutorOrigin } from "@/ai/requestOrigin";
 export const runtime = "nodejs";
 const requests = new Map<string, { count: number; until: number }>();
 export async function POST(request: Request) {
-  const origin = request.headers.get("origin");
-  if (origin && origin !== new URL(request.url).origin)
+  if (!isAllowedTutorOrigin(request))
     return Response.json(
       { error: "This request could not be accepted." },
       { status: 403 },

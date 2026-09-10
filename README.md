@@ -44,6 +44,12 @@ The Next.js server listens on port 3000 by default. Override with `npm start -- 
 
 Import `NaveenKumar-G-AI/AceApt-AI` and leave the project root at the **repository root** (`./`). Choose Next.js and Node 22 or newer. Install: `npm ci`. Build: `npm run build`. Leave the output directory at the framework default (`.next`). Configure the two AI environment variables in the hosting dashboard and redeploy. The included `vercel.json` sets the framework and install/build commands using the [documented Vercel configuration](https://vercel.com/docs/project-configuration/vercel-json). Next.js handles direct internal routes; no SPA rewrites or external databases are required. Deployment itself has not been performed.
 
+## Deploy to Render
+
+Create a **Node Web Service** linked to this repository and branch `main`. Leave Root Directory blank. Build command: `npm ci --include=dev && npm run build`. Start command: `npm start -- --hostname 0.0.0.0 --port $PORT`. Set `NODE_VERSION=24.14.0`, `NODE_ENV=production`, `GEMINI_API_KEY` and `GEMINI_MODEL` in Render's Environment settings. Health check path: `/`.
+
+Render terminates HTTPS before forwarding traffic to Next.js. The tutor recognizes the public origin using Render's automatically supplied `RENDER_EXTERNAL_URL`; do not manually override it. If you add a custom domain, set optional `APP_ORIGIN` to its exact origin (for example, `https://learn.example.com`, with no path). Other origins remain rejected; forwarded headers alone cannot authorize a request. Save environment changes and redeploy. See [Render web services](https://render.com/docs/web-services) and [default environment variables](https://render.com/docs/environment-variables).
+
 ## Validation
 
 ```sh
