@@ -1,0 +1,314 @@
+[
+  {
+    "source": "part2/src/lib/domain/capabilityState.ts",
+    "destination": "src/lib/domain/capabilityState.ts"
+  },
+  {
+    "source": "part2/src/lib/domain/reportBuilder.ts",
+    "destination": "src/lib/domain/reportBuilder.ts"
+  },
+  {
+    "source": "part2/src/lib/domain/rootCauseEngine.ts",
+    "destination": "src/lib/domain/rootCauseEngine.ts"
+  },
+  {
+    "source": "part2/src/lib/domain/selectionEngine.ts",
+    "destination": "src/lib/domain/selectionEngine.ts"
+  },
+  {
+    "source": "part2/src/lib/domain/types.ts",
+    "destination": "src/lib/domain/types.ts"
+  },
+  {
+    "source": "part2/src/lib/domain/validation/questionValidator.ts",
+    "destination": "src/lib/domain/validation/questionValidator.ts"
+  },
+  {
+    "source": "part2/src/data/seed/questions.ts",
+    "destination": "src/data/seed/questions.ts"
+  },
+  {
+    "source": "part2/src/data/seed/skills.ts",
+    "destination": "src/data/seed/skills.ts"
+  },
+  {
+    "source": "part46/src/domain/types.ts",
+    "destination": "src/engines/teaching/types.ts"
+  },
+  {
+    "source": "part46/src/domain/questionBank.ts",
+    "destination": "src/engines/teaching/questionBank.ts"
+  },
+  {
+    "source": "part46/src/domain/responseClassifier.ts",
+    "destination": "src/engines/teaching/responseClassifier.ts"
+  },
+  {
+    "source": "part46/src/domain/hintEscalation.ts",
+    "destination": "src/engines/teaching/hintEscalation.ts"
+  },
+  {
+    "source": "part46/src/domain/misconceptionLab.ts",
+    "destination": "src/engines/teaching/misconceptionLab.ts"
+  },
+  {
+    "source": "part46/src/domain/teachBack.ts",
+    "destination": "src/engines/teaching/teachBack.ts"
+  },
+  {
+    "source": "part48/src/domain/sampleData.ts",
+    "destination": "src/engines/hints/domain/sampleData.ts"
+  },
+  {
+    "source": "part48/src/domain/types.ts",
+    "destination": "src/engines/hints/domain/types.ts"
+  },
+  {
+    "source": "part48/src/policy/dependencyState.ts",
+    "destination": "src/engines/hints/policy/dependencyState.ts"
+  },
+  {
+    "source": "part48/src/policy/hintPolicyEngine.ts",
+    "destination": "src/engines/hints/policy/hintPolicyEngine.ts"
+  },
+  {
+    "source": "part58/src/domain/bottlenecks.ts",
+    "destination": "src/engines/decisions/domain/bottlenecks.ts"
+  },
+  {
+    "source": "part58/src/domain/calibration.ts",
+    "destination": "src/engines/decisions/domain/calibration.ts"
+  },
+  {
+    "source": "part58/src/domain/decisionQuality.ts",
+    "destination": "src/engines/decisions/domain/decisionQuality.ts"
+  },
+  {
+    "source": "part58/src/domain/elimination.ts",
+    "destination": "src/engines/decisions/domain/elimination.ts"
+  },
+  {
+    "source": "part58/src/domain/expectedValue.ts",
+    "destination": "src/engines/decisions/domain/expectedValue.ts"
+  },
+  {
+    "source": "part58/src/domain/policyRules.ts",
+    "destination": "src/engines/decisions/domain/policyRules.ts"
+  },
+  {
+    "source": "part58/src/types.ts",
+    "destination": "src/engines/decisions/types.ts"
+  },
+  {
+    "source": "part19/src/engine/conceptGraph.ts",
+    "destination": "src/engines/retention/engine/conceptGraph.ts"
+  },
+  {
+    "source": "part19/src/engine/decayDetection.ts",
+    "destination": "src/engines/retention/engine/decayDetection.ts"
+  },
+  {
+    "source": "part19/src/engine/evidence.ts",
+    "destination": "src/engines/retention/engine/evidence.ts"
+  },
+  {
+    "source": "part19/src/engine/pressureAnalysis.ts",
+    "destination": "src/engines/retention/engine/pressureAnalysis.ts"
+  },
+  {
+    "source": "part19/src/engine/reactivationEngine.ts",
+    "destination": "src/engines/retention/engine/reactivationEngine.ts"
+  },
+  {
+    "source": "part19/src/engine/recallScheduler.ts",
+    "destination": "src/engines/retention/engine/recallScheduler.ts"
+  },
+  {
+    "source": "part19/src/engine/retentionStrength.ts",
+    "destination": "src/engines/retention/engine/retentionStrength.ts"
+  },
+  {
+    "source": "part19/src/engine/sessionBuilders.ts",
+    "destination": "src/engines/retention/engine/sessionBuilders.ts"
+  },
+  {
+    "source": "part19/src/domain/types.ts",
+    "destination": "src/engines/retention/domain/types.ts"
+  },
+  {
+    "source": "part56/src/seed/formulas.seed.ts",
+    "destination": "src/engines/formulas/seed.ts"
+  },
+  {
+    "source": "part56/src/types/index.ts",
+    "destination": "src/engines/formulas/types/index.ts"
+  },
+  {
+    "source": "part56/src/errors/formulaErrorClassifier.ts",
+    "destination": "src/engines/formulas/errors/formulaErrorClassifier.ts"
+  },
+  {
+    "source": "part56/src/bottleneck/formulaBottleneckAnalyzer.ts",
+    "destination": "src/engines/formulas/bottleneck/formulaBottleneckAnalyzer.ts"
+  },
+  {
+    "source": "part42/src/engine/accuracyProfile.ts",
+    "destination": "src/engines/diagnostics/engine/accuracyProfile.ts"
+  },
+  {
+    "source": "part42/src/engine/blueprint.ts",
+    "destination": "src/engines/diagnostics/engine/blueprint.ts"
+  },
+  {
+    "source": "part42/src/engine/bottleneckDetection.ts",
+    "destination": "src/engines/diagnostics/engine/bottleneckDetection.ts"
+  },
+  {
+    "source": "part42/src/engine/capabilityEstimator.ts",
+    "destination": "src/engines/diagnostics/engine/capabilityEstimator.ts"
+  },
+  {
+    "source": "part42/src/engine/confidence.ts",
+    "destination": "src/engines/diagnostics/engine/confidence.ts"
+  },
+  {
+    "source": "part42/src/engine/consistency.ts",
+    "destination": "src/engines/diagnostics/engine/consistency.ts"
+  },
+  {
+    "source": "part42/src/engine/difficultyProfile.ts",
+    "destination": "src/engines/diagnostics/engine/difficultyProfile.ts"
+  },
+  {
+    "source": "part42/src/engine/evidenceQuality.ts",
+    "destination": "src/engines/diagnostics/engine/evidenceQuality.ts"
+  },
+  {
+    "source": "part42/src/engine/explainability.ts",
+    "destination": "src/engines/diagnostics/engine/explainability.ts"
+  },
+  {
+    "source": "part42/src/engine/recommendationEngine.ts",
+    "destination": "src/engines/diagnostics/engine/recommendationEngine.ts"
+  },
+  {
+    "source": "part42/src/engine/speedProfile.ts",
+    "destination": "src/engines/diagnostics/engine/speedProfile.ts"
+  },
+  {
+    "source": "part42/src/engine/studentProfileBuilder.ts",
+    "destination": "src/engines/diagnostics/engine/studentProfileBuilder.ts"
+  },
+  {
+    "source": "part42/src/engine/timingIntelligence.ts",
+    "destination": "src/engines/diagnostics/engine/timingIntelligence.ts"
+  },
+  {
+    "source": "part42/src/types/domain.ts",
+    "destination": "src/engines/diagnostics/types/domain.ts"
+  },
+  {
+    "source": "part56/src/validation/formulaValidator.ts",
+    "destination": "src/engines/formulas/validation/formulaValidator.ts"
+  },
+  {
+    "source": "part56/src/repositories/index.ts",
+    "destination": "src/engines/formulas/repositories/index.ts"
+  },
+  {
+    "source": "part56/src/state/formulaStudentStateService.ts",
+    "destination": "src/engines/formulas/state/formulaStudentStateService.ts"
+  },
+  {
+    "source": "part19/src/repositories/ports.ts",
+    "destination": "src/engines/retention/repositories/ports.ts"
+  },
+  {
+    "source": "part19/src/integration/featurePorts.ts",
+    "destination": "src/engines/retention/integration/featurePorts.ts"
+  },
+  {
+    "source": "part50/backend/src/core/speedAnalysis.ts",
+    "destination": "src/engines/speed/core/speedAnalysis.ts"
+  },
+  {
+    "source": "part50/backend/src/core/trainingPolicy.ts",
+    "destination": "src/engines/speed/core/trainingPolicy.ts"
+  },
+  {
+    "source": "part50/backend/src/types/domain.ts",
+    "destination": "src/engines/speed/types/domain.ts"
+  },
+  {
+    "source": "part50/backend/src/core/accuracyGuardrail.ts",
+    "destination": "src/engines/speed/accuracyGuardrail.ts"
+  },
+  {
+    "source": "part51/src/domain/stability.ts",
+    "destination": "src/engines/accuracy/stability.ts"
+  },
+  {
+    "source": "part57/backend/src/utils/mathEval.ts",
+    "destination": "src/engines/shortcuts/utils/mathEval.ts"
+  },
+  {
+    "source": "part57/backend/src/utils/random.ts",
+    "destination": "src/engines/shortcuts/utils/random.ts"
+  },
+  {
+    "source": "part57/backend/src/domain/enums.ts",
+    "destination": "src/engines/shortcuts/domain/enums.ts"
+  },
+  {
+    "source": "part57/backend/src/services/validationService.ts",
+    "destination": "src/engines/shortcuts/validation.ts"
+  },
+  {
+    "source": "part57/backend/src/services/trust.ts",
+    "destination": "src/engines/shortcuts/trust.ts"
+  },
+  {
+    "source": "part2/tests/capabilityState.test.ts",
+    "destination": "tests/capabilityState.test.ts"
+  },
+  {
+    "source": "part2/tests/questionValidator.test.ts",
+    "destination": "tests/questionValidator.test.ts"
+  },
+  {
+    "source": "part2/tests/reportBuilder.test.ts",
+    "destination": "tests/reportBuilder.test.ts"
+  },
+  {
+    "source": "part2/tests/selectionEngine.test.ts",
+    "destination": "tests/selectionEngine.test.ts"
+  },
+  {
+    "source": "part2/tests/helpers/fixtures.ts",
+    "destination": "tests/helpers/fixtures.ts"
+  },
+  {
+    "source": "part26/backend/src/types.ts",
+    "destination": "src/engines/adaptation/types.ts"
+  },
+  {
+    "source": "part26/backend/src/engine/constants.ts",
+    "destination": "src/engines/adaptation/engine/constants.ts"
+  },
+  {
+    "source": "part26/backend/src/engine/diagnosis.ts",
+    "destination": "src/engines/adaptation/engine/diagnosis.ts"
+  },
+  {
+    "source": "part26/backend/src/engine/candidateActions.ts",
+    "destination": "src/engines/adaptation/engine/candidateActions.ts"
+  },
+  {
+    "source": "part26/backend/src/engine/priority.ts",
+    "destination": "src/engines/adaptation/engine/priority.ts"
+  },
+  {
+    "source": "part26/backend/src/engine/plan.ts",
+    "destination": "src/engines/adaptation/engine/plan.ts"
+  }
+]
