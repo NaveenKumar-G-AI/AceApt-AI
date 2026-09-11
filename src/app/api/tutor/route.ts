@@ -66,7 +66,7 @@ export async function POST(request: Request) {
         error:
           status === 429
             ? "The tutor is busy. Please wait a minute and try again."
-            : "ACEAPT couldn't generate this explanation right now. Try again or continue with the available solution steps.",
+            : "PrepVista couldn't generate this explanation right now. Try again or continue with the available solution steps.",
       },
       { status, headers: { "Cache-Control": "no-store" } },
     );

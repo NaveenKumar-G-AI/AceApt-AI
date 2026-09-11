@@ -207,7 +207,7 @@ export function Preferences() {
       setMessage("Progress imported.");
     } catch {
       setMessage(
-        "This file is not a compatible ACEAPT progress backup. Your existing progress is unchanged.",
+        "This file is not a compatible PrepVista progress backup. Your existing progress is unchanged.",
       );
     }
     if (file.current) file.current.value = "";

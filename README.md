@@ -1,12 +1,14 @@
-# ACEAPT
+# PrepVista Aptitude (ACEAPT)
 
 An anonymous aptitude learning workspace: understand concepts, practise, examine mistakes, and build independent problem-solving ability. The application opens directly into the product.
+
+The unified app uses PrepVista's original logo, wordmark, typography and exact light/dark theme tokens. Dark mode is the default; the header toggle remembers the selected theme using PrepVista's `pv_theme` preference. Existing ACEAPT learning progress and backups remain compatible. See [branding verification](docs/BRANDING.md).
 
 ## Run
 
 Requires Node.js 22+ and npm. Run commands **inside this folder**.
 
-This repository contains the complete unified application at its root. The original prototype parts and PrepVista are not included.
+This repository contains the complete unified application at its root. The original prototype parts and the separate PrepVista application are not included; the required branding assets are bundled locally.
 
 ```sh
 npm ci

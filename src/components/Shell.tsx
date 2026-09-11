@@ -11,16 +11,17 @@ import {
   RotateCcw,
   Bookmark,
   Settings,
-  Zap,
   ArrowUpRight,
 } from "lucide-react";
 import { useLearning } from "./LearningProvider";
+import { BrandLogo } from "./BrandLogo";
+import { ThemeToggle } from "./ThemeToggle";
 const nav = [
   ["/", "Workspace", LayoutDashboard],
   ["/learn", "Learn & understand", BookOpen],
   ["/practice", "Practice studio", Target],
   ["/skills", "Skill map", Network],
-  ["/tutor", "Ask ACEAPT", MessageCircle],
+  ["/tutor", "Ask PrepVista", MessageCircle],
   ["/progress", "Your progress", TrendingUp],
   ["/revision", "Revision", RotateCcw],
   ["/library", "Personal library", Bookmark],
@@ -32,11 +33,8 @@ export function Shell({ children }: { children: React.ReactNode }) {
   return (
     <div className="app-shell">
       <aside className="sidebar">
-        <Link href="/" className="brand">
-          <span className="brand-mark">
-            <Zap size={22} fill="currentColor" />
-          </span>
-          ACEAPT<span className="brand-dot">.</span>
+        <Link href="/" className="brand" aria-label="PrepVista aptitude workspace">
+          <BrandLogo />
         </Link>
         <div className="sidebar-caption">YOUR LEARNING SPACE</div>
         <nav aria-label="Main navigation">
@@ -46,6 +44,8 @@ export function Shell({ children }: { children: React.ReactNode }) {
               href={href}
               className={path === href ? "active" : ""}
               aria-current={path === href ? "page" : undefined}
+              aria-label={label}
+              title={label}
             >
               <Icon size={19} />
               <span>{label}</span>
@@ -76,9 +76,12 @@ export function Shell({ children }: { children: React.ReactNode }) {
               {nav.find(([href]) => href === path)?.[1] ?? "Learning"}
             </strong>
           </span>
-          <span className="device-note">
-            <span className="status-dot" /> Progress saved on this device
-          </span>
+          <div className="topbar-actions">
+            <span className="device-note">
+              <span className="status-dot" /> Progress saved on this device
+            </span>
+            <ThemeToggle />
+          </div>
         </header>
         <main id="main-content">
           {notice && (
@@ -89,7 +92,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
           {children}
         </main>
         <footer>
-          ACEAPT · Understand more. Solve independently.
+          PrepVista · Understand more. Solve independently.
           <span>Prototype · Your learning stays in this browser</span>
         </footer>
       </div>

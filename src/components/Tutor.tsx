@@ -17,7 +17,7 @@ export function TutorBox({
   return (
     <section className="card">
       <Sparkles size={22} />
-      <h3>Think with ACEAPT</h3>
+      <h3>Think with PrepVista</h3>
       <TutorChat
         questionId={questionId}
         context={context}
@@ -129,7 +129,7 @@ function TutorChat({
       <div className="chat-messages" aria-live="polite">
         {messages.map((m, i) => (
           <article className={`chat-message ${m.role}`} key={i}>
-            <strong>{m.role === "user" ? "You" : "ACEAPT"}</strong>
+            <strong>{m.role === "user" ? "You" : "PrepVista"}</strong>
             <p>{m.text}</p>
           </article>
         ))}
@@ -184,7 +184,7 @@ function TutorChat({
         />
         <div className="button-row">
           <button disabled={busy || message.trim().length < 8} type="submit">
-            {busy ? "Thinking…" : "Ask ACEAPT"} <ArrowUp size={16} />
+            {busy ? "Thinking…" : "Ask PrepVista"} <ArrowUp size={16} />
           </button>
           {busy && (
             <button

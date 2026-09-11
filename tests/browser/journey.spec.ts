@@ -217,7 +217,7 @@ test("tutor failure is recoverable and a valid reply renders safely", async ({
   await page
     .getByLabel("Your question and reasoning")
     .fill("How do I find 20 percent of 500?");
-  await page.getByRole("button", { name: "Ask ACEAPT", exact: true }).click();
+  await page.getByRole("button", { name: "Ask PrepVista", exact: true }).click();
   await expect(page.locator("main").getByRole("alert")).toContainText(
     "unavailable",
   );
@@ -231,7 +231,7 @@ test("tutor failure is recoverable and a valid reply renders safely", async ({
       },
     }),
   );
-  await page.getByRole("button", { name: "Ask ACEAPT", exact: true }).click();
+  await page.getByRole("button", { name: "Ask PrepVista", exact: true }).click();
   await expect(
     page.getByText("What is 500 divided by 10?", { exact: false }),
   ).toBeVisible();
